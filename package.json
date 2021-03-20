@@ -1,0 +1,19 @@
+{
+  "name": "realtime-pizza",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yousuf4you/realtime-pizza.git"
+  },
+  "author": "https://www.youtube.com/c/CodersGyan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yousuf4you/realtime-pizza/issues"
+  },
+  "homepage": "https://github.com/yousuf4you/realtime-pizza#readme"
+}
