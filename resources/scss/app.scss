@@ -1,0 +1,50 @@
+@import "./variables";
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Lato", sans-serif;
+	--webkit-font-smoothing: antialiased;
+	color: $dark;
+}
+
+nav li:last-child a {
+	background: $primary;
+}
+
+nav li:last-child a {
+	transition: $smooth;
+	&:hover {
+		background: $primary-hover;
+	}
+}
+
+nav li a {
+	&:hover {
+		color: $primary;
+	}
+}
+
+section.hero {
+	background-color: $secondary;
+}
+
+.size {
+	background-color: $secondary;
+}
+
+.add-to-cart {
+	border: 2px solid $primary;
+	color: $primary;
+	transition: $smooth;
+
+	&:hover {
+		background-color: $primary;
+		color: $pure;
+		border-color: $pure;
+	}
+}
