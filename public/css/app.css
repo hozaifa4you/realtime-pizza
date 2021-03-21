@@ -46,3 +46,20 @@ section.hero {
   border-color: #fff;
 }
 
+.order-button {
+  background: #fe5f1e;
+  transition: all 0.3s ease-in-out;
+}
+
+.order-button:hover {
+  background: #b23301;
+}
+
+section.cart {
+  background: #f8f8f8;
+}
+
+section.cart .total-amount {
+  color: #fe5f1e;
+}
+

@@ -48,3 +48,18 @@ section.hero {
 		border-color: $pure;
 	}
 }
+
+.order-button {
+	background: $primary;
+	transition: $smooth;
+	&:hover {
+		background: $primary-hover;
+	}
+}
+
+section.cart {
+	background: $secondary;
+	.total-amount {
+		color: $primary;
+	}
+}

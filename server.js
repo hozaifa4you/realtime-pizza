@@ -18,15 +18,27 @@ app.use(cors());
 
 app.use(express.static("public"));
 
+// set view engine
+app.use(expressLayout);
+app.set("views", path.join(__dirname, "/resources/views"));
+app.set("view engine", "ejs");
+
 // server routes
 app.get("/", (req, res) => {
 	res.render("home");
 });
 
-// set view engine
-app.use(expressLayout);
-app.set("views", path.join(__dirname, "/resources/views"));
-app.set("view engine", "ejs");
+app.get("/cart", (req, res) => {
+	res.render("customers/cart");
+});
+
+app.get("/register", (req, res) => {
+	res.render("auth/register");
+});
+
+app.get("/login", (req, res) => {
+	res.render("auth/login");
+});
 
 // server listening
 app.listen(PORT, () => {
