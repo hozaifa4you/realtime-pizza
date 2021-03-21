@@ -63,3 +63,7 @@ section.cart .total-amount {
   color: #fe5f1e;
 }
 
+.login-page > div > div {
+  min-height: calc(89.5vh - 86px);
+}
+

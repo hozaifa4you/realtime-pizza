@@ -63,3 +63,7 @@ section.cart {
 		color: $primary;
 	}
 }
+
+.login-page > div > div {
+	min-height: calc(89.5vh - 86px);
+}
