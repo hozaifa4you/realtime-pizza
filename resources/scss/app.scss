@@ -81,3 +81,10 @@ section.cart {
 	border-radius: 8px !important;
 	padding-left: 8px !important;
 }
+
+.link {
+	color: $primary;
+	&:hover {
+		color: $primary-hover;
+	}
+}

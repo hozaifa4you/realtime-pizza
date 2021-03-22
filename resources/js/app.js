@@ -1,6 +1,8 @@
 import Axios from "axios";
 import Noty from "noty";
 
+import { initAdmin } from "./admin";
+
 const addToCart = document.querySelectorAll(".add-to-cart");
 
 const updateCart = pizza => {
@@ -32,3 +34,13 @@ addToCart.forEach(btn => {
 		updateCart(pizza);
 	});
 });
+
+const alertMsg = document.querySelector("#success-alert");
+if (alertMsg) {
+	setTimeout(function() {
+		alertMsg.remove();
+	}, 1500);
+}
+
+// admin initAdmin
+initAdmin();

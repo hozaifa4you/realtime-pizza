@@ -379,3 +379,11 @@ section.cart .total-amount {
   padding-left: 8px !important;
 }
 
+.link {
+  color: #fe5f1e;
+}
+
+.link:hover {
+  color: #b23301;
+}
+
