@@ -105,3 +105,6 @@ dist
 
 # custom 
 .DS_Store
+
+# vscode setting
+.vscode
