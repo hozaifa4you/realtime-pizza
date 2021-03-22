@@ -103,8 +103,12 @@ dist
 # TernJS port file
 .tern-port
 
-# custom 
+# custom dispatch
 .DS_Store
 
 # vscode setting
 .vscode
+
+# yarn lock file dispatch
+yarn.lock
+yarn-error.log
