@@ -1,4 +1,6 @@
 @import "./variables";
+@import "~noty/src/noty.scss";
+@import "~noty/src/themes/mint.scss";
 
 * {
 	margin: 0;
@@ -47,6 +49,10 @@ section.hero {
 		color: $pure;
 		border-color: $pure;
 	}
+
+	&:focus {
+		outline: none;
+	}
 }
 
 .order-button {
@@ -54,6 +60,9 @@ section.hero {
 	transition: $smooth;
 	&:hover {
 		background: $primary-hover;
+	}
+	&:focus {
+		outline: none;
 	}
 }
 
@@ -66,4 +75,9 @@ section.cart {
 
 .login-page > div > div {
 	min-height: calc(89.5vh - 86px);
+}
+
+.noty_theme__mint {
+	border-radius: 8px !important;
+	padding-left: 8px !important;
 }

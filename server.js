@@ -1,11 +1,17 @@
 require("dotenv").config();
 const express = require("express");
 const path = require("path");
-const chalk = require("chalk");
 const expressLayout = require("express-ejs-layouts");
-const ejs = require("ejs");
+const chalk = require("chalk");
 const bodyParser = require("body-parser");
 const cors = require("cors");
+const morgan = require("morgan");
+const session = require("express-session");
+const flash = require("express-flash");
+const MongoDbStore = require("connect-mongo");
+
+// local module
+const databaseConnection = require("./app/db/db"); // TODO: depricated
 
 // config
 const app = express();
@@ -15,6 +21,7 @@ const PORT = process.env.PORT || 8080;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
+app.use(morgan("dev"));
 
 app.use(express.static("public"));
 
@@ -23,22 +30,32 @@ app.use(expressLayout);
 app.set("views", path.join(__dirname, "/resources/views"));
 app.set("view engine", "ejs");
 
-// server routes
-app.get("/", (req, res) => {
-	res.render("home");
+// database connection
+databaseConnection(); // TODO: to be removed
+
+// session config
+app.use(
+	session({
+		secret: process.env.secretKey,
+		resave: false,
+		store: MongoDbStore.create({
+			mongoUrl: process.env.DB_CONNECTION,
+			collectionName: "sessions",
+		}),
+		saveUninitialized: false,
+		cookie: { maxAge: 1000 * 60 * 60 * 24 },
+	})
+);
+
+app.use(flash());
+
+app.use((req, res, next) => {
+	res.locals.session = req.session;
+	next();
 });
 
-app.get("/cart", (req, res) => {
-	res.render("customers/cart");
-});
-
-app.get("/register", (req, res) => {
-	res.render("auth/register");
-});
-
-app.get("/login", (req, res) => {
-	res.render("auth/login");
-});
+// Routers
+require("./routes/web")(app);
 
 // server listening
 app.listen(PORT, () => {
