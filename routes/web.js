@@ -10,6 +10,7 @@ const initRouters = app => {
 	app.get("/cart", cartController().cart);
 
 	app.get("/register", registerController().register);
+	app.post("/register", registerController().postRegister);
 
 	app.get("/login", loginController().login);
 
